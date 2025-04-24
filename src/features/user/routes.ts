@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { getAllHandle } from "./handle";
+import { getAllHandle, registerHandle } from "./handles";
 import { UserInterface } from "./interface";
 
 export const userRouter = Router();
-userRouter.get("/", getAllHandle);
-// userRoouter.post("/register",
+userRouter.get("/", getAllHandle); // .user
+userRouter.post("/register", registerHandle); // ./user/resgister

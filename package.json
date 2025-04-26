@@ -1,30 +1,30 @@
 {
-  "name": "narit-pos-backend",
-  "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "narit-sud",
-  "type": "commonjs",
-  "main": "index.ts",
-  "scripts": {
-    "test": "test",
-    "dev": "nodemon --watch src --exec ts-node src/index.ts"
-  },
-  "dependencies": {
-    "@types/bcrypt": "^5.0.2",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.1",
-    "@types/node": "^22.14.1",
-    "@types/pg": "^8.11.13",
-    "bcrypt": "^5.1.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "jose": "^6.0.10",
-    "nodemon": "^3.1.9",
-    "pg": "^8.14.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
-    "uuid": "^11.1.0"
-  }
+    "name": "narit-pos-backend",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "narit-sud",
+    "type": "module",
+    "main": "index.ts",
+    "scripts": {
+        "test": "test",
+        "dev": "tsx watch src"
+    },
+    "dependencies": {
+        "@types/bcrypt": "^5.0.2",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.1",
+        "@types/node": "^22.14.1",
+        "@types/pg": "^8.11.13",
+        "bcrypt": "^5.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.5.0",
+        "express": "^5.1.0",
+        "jose": "^6.0.10",
+        "nodemon": "^3.1.9",
+        "pg": "^8.14.1",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.3",
+        "uuid": "^11.1.0"
+    }
 }

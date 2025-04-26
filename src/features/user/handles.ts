@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CustomError } from "../../Class/CustomError";
+import { CustomError } from "../../class/CustomError";
 import { db } from "../../libs/db";
 import { registerService } from "./services";
 import { validateRegisterCredentials } from "./validateRegisterCredentials";
@@ -24,7 +24,7 @@ export async function getAllHandle(req: Request, res: Response): Promise<void> {
 
 export async function registerHandle(
     req: Request,
-    res: Response
+    res: Response,
 ): Promise<void> {
     const credentials = req.body;
     if (!credentials) {
@@ -51,6 +51,10 @@ export async function registerHandle(
     } catch (error) {
         if (error instanceof Error) {
             console.log(error);
+            if (error.message.includes("email")) {
+                res.status(400).send({ message: "Email already exists" });
+                return;
+            }
             res.status(500).send({
                 message: "Internal server error",
                 error: error.message,

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { loginService } from "./services";
 import { validateLoginCredentials } from "./validateLoginCredentials";
-import { CustomError } from "../../Class/CustomError";
+import { CustomError } from "../../class/CustomError";
 import { signToken } from "../../libs/token";
 
 export async function loginHandle(req: Request, res: Response): Promise<void> {
@@ -16,7 +16,7 @@ export async function loginHandle(req: Request, res: Response): Promise<void> {
     }
     const credentialsValid = validateLoginCredentials(
         credentials.username,
-        credentials.password
+        credentials.password,
     );
     if (!credentialsValid.isValid) {
         res.status(400).json({
@@ -29,12 +29,12 @@ export async function loginHandle(req: Request, res: Response): Promise<void> {
     try {
         const userId = await loginService(
             credentials.username,
-            credentials.password
+            credentials.password,
         );
         //  add token to the response header
         const token = await signToken(
             { id: userId, username: credentials.username },
-            process.env.JWT_SECRET_KEY!
+            process.env.JWT_SECRET_KEY!,
         );
         // response to client
         res.status(200)

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { userRouter } from "./features/user/routes";
-import { authRouter } from "./features/auth/routes";
+import { authRouter } from "./features/auth/auth.routes";
 import { testRouter } from "./features/test/routes";
 import { storeRouter } from "./features/store/store.routes";
 

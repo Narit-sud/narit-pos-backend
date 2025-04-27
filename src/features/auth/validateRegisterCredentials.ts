@@ -1,4 +1,4 @@
-import { RegisterCredentialsInterface } from "./interface";
+import { RegisterCredentialsInterface } from "./auth.interface";
 
 export function validateRegisterCredentials(
     credentials: RegisterCredentialsInterface
